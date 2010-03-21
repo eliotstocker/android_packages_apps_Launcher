@@ -100,6 +100,8 @@
     <string name="menu_gestures">Gestures</string>
     <!-- Noun, menu item used to show the system settings -->
     <string name="menu_settings">Settings</string>
+    <!-- Noun, menu item used to show the Spare Parts settings -->
+    <string name="menu_spare">Spare Parts</string>
 
     <!-- Permissions: -->
     <string name="permlab_install_shortcut">install shortcuts</string>

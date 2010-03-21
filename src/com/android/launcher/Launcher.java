@@ -104,6 +104,7 @@ public final class Launcher extends Activity implements View.OnClickListener, On
     private static final int MENU_SEARCH = MENU_WALLPAPER_SETTINGS + 1;
     private static final int MENU_NOTIFICATIONS = MENU_SEARCH + 1;
     private static final int MENU_SETTINGS = MENU_NOTIFICATIONS + 1;
+    private static final int MENU_SPARE = MENU_SETTINGS + 1;
 
     private static final int REQUEST_CREATE_SHORTCUT = 1;
     private static final int REQUEST_CREATE_LIVE_FOLDER = 4;
@@ -1074,6 +1075,17 @@ public final class Launcher extends Activity implements View.OnClickListener, On
         menu.add(0, MENU_SETTINGS, 0, R.string.menu_settings)
                 .setIcon(android.R.drawable.ic_menu_preferences).setAlphabeticShortcut('P')
                 .setIntent(settings);
+
+// add menu button to goto Spare Parts that I added to settings --Eliot Stocker
+
+        final Intent spare = new Intent(Intent.ACTION_VIEW);
+        spare.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK |
+                Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED);
+	spare.setClassName("com.android.settings","com.android.settings.SpareParts");
+
+        menu.add(0, MENU_SPARE, 0, R.string.menu_spare)
+                .setIcon(android.R.drawable.ic_menu_preferences).setAlphabeticShortcut('Z')
+                .setIntent(spare);
 
         return true;
     }
